@@ -1,5 +1,32 @@
 #!/usr/bin/env Python
 
+#explain script
+print('\nThis script will find the names of the LLDP enable devices on your switch.')
+
+#ask for IP
+userIP = input ('\nPlease enter the IP of the switch: ')
+
+#ask for username
+username = input ('\nUsername: ')
+
+#connect to switch
+while True:
+	try:
+		myDevice = {
+		'host': distroIP,
+		'username': username,
+		'password': password,
+		'device_type': 'cisco_ios',
+		}
+		print ('Logging in now...')
+		# Connects to "myDevice"
+		net_connect = Netmiko(**myDevice)
+		net_connect.enable()
+		break
+	except:
+		print ('Login failed. Please try again.')
+		continue
+
 #open txt file
 with open('AP.txt') as f:
 
