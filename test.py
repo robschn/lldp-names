@@ -13,9 +13,9 @@ username = input ('\nUsername: ')
 while True:
 	try:
 		myDevice = {
-		'host': distroIP,
+		'host': userIP,
 		'username': username,
-		'password': password,
+		'password': getpass(),
 		'device_type': 'cisco_ios',
 		}
 		print ('Logging in now...')
@@ -27,14 +27,14 @@ while True:
 		print ('Login failed. Please try again.')
 		continue
 
-#open txt file
-with open('AP.txt') as f:
+#issue sh lldp nei
+data = net_connect.send_command('show lldp nei')
 
-    #split the LLDP file
-    data = f.read().split()
+#split the LLDP output
+data = f.read().split()
 
-    #create output file for the print
-    y = open('output.txt', 'w')
+#create output file for the print
+f = open('output.txt', 'w')
 
-    #print every 5th line and seperate but a new line, then output to file
-    print("\n".join(data[::5]), file=y)
+#print every 5th line and seperate but a new line, then output to file
+print("\n".join(data[::5]), file=f)
