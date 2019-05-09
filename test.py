@@ -1,5 +1,9 @@
 #!/usr/bin/env Python
 
+#imports
+from netmiko import Netmiko
+from getpass import getpass
+
 #explain script
 print('\nThis script will find the names of the LLDP enable devices on your switch.')
 
@@ -15,7 +19,7 @@ while True:
 		myDevice = {
 		'host': userIP,
 		'username': username,
-		'password': password,
+		'password': getpass(),
 		'device_type': 'cisco_ios',
 		}
 		print ('Logging in now...')
