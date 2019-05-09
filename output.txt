@@ -1,0 +1,12 @@
+Capability
+Bridge,
+Cable
+Point,
+(O)
+Intf
+422-4500.rollins.eduGi1/0/25
+Gi1/0/7
+Gi1/0/8
+Gi1/0/6
+Gi1/0/9
+entries

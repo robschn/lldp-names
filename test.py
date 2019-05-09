@@ -32,10 +32,10 @@ while True:
 		continue
 
 #issue sh lldp nei
-data = net_connect.send_command('show lldp nei')
+f = net_connect.send_command('show lldp nei')
 
 #split the LLDP output
-data = f.read().split()
+data = f.split()
 
 #create output file for the print
 f = open('output.txt', 'w')
