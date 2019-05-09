@@ -1,5 +1,5 @@
 # lldpNames
-IN PROGRESS
+***IN PROGRESS***
 
 This script will log into a switch to search a LLDP output and grab only the names.
 
