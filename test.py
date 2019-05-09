@@ -15,7 +15,7 @@ while True:
 		myDevice = {
 		'host': userIP,
 		'username': username,
-		'password': getpass(),
+		'password': password,
 		'device_type': 'cisco_ios',
 		}
 		print ('Logging in now...')
